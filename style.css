@@ -1,5 +1,59 @@
+* {
+    font-family: sans-serif;
+}
 body {
     background-image: url(./images/background.svg);
     background-repeat: repeat;
     background-size: 50px 50px;
+    height: 10000px;
+    /* Credit for image https://thenounproject.com/icon/food-3407707/ */
+}
+
+#floatingHeader { 
+    height: 50px;
+    background-color: white;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#appTitle {
+    margin: auto;
+    margin-left: 10px;
+}
+#adder{
+    margin: auto;
+    margin-right: 10px;
+    border-radius: 25px;
+    height: 80%;
+}
+
+.restTile { 
+    border-style: solid;
+    border-radius: 25px;
+    width: 100px;
+    height: fit-content;
+    background-color: white;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.form {
+    border-style: solid;
+    border-radius: 25px;
+    box-shadow: 0px 0px 3px 3px;
+    background-color: antiquewhite;
+    margin: auto;
+    margin-top: 100px;
+    width: 25%;
+    padding: 25px;
+}
+
+.formCont{
+    justify-items: center;
 }
