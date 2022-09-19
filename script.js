@@ -1,96 +1,62 @@
-// DOM constants
-
+//DOM Constants
 const adderButton = document.getElementById("adder");
 const container = document.getElementById("container");
-
-// Object Constructors
-
-function restaurantAdder(name, nationality, price, fancyness, vegan, speed){
+// Tests
+adderButton.addEventListener("click", ()=>{addWindow()});
+//Object Constructor 
+function restaurantCreator(name, nationality, visited, price){
     this.name = name;
     this.nationality = nationality;
-    this.price = price; 
-    this.fancyness = fancyness; 
-    this.vegan = vegan; 
-    this.speed = speed;
+    this.visited = visited;
+    this.price = price;
 }
 
-//Test case
+//Adder function
+function addWindow(){
+    const window = document.createElement("div");
+    window.classList = "addWindow";
+    document.body.appendChild(window);
+    const formName = document.createElement("div");
+    formName.innerHTML = "Add a Restaurant";
+    formName.style.marginBottom = 5 +"px";
+    formName.style.textAlign = "center";
+    window.appendChild(formName);
+    const formWindow = document.createElement("div");
+    formWindow.style.width = 100 +"%";
+    formWindow.style.height = 80 +"%";
+    //formWindow.style.justifyContent = "space-between";
+    formWindow.style.columnGap = 5+"px";
+    formWindow.style.display = "flex";
+    formWindow.style.flexDirection = "column";
+    window.appendChild(formWindow);
 
-const tacoBell = new restaurantAdder("Taco Bell", "Mexican", "$", "Casual", "Vegan-Friendly", "fast");
+    const rNameLabel = document.createElement("label");
+    rNameLabel.htmlFor = "restName";
+    rNameLabel.style.marginLeft = 5+"px";
+    rNameLabel.textContent = "Restaurant Name: ";
+    const rName = document.createElement("input");
+    rName.tagName = "restName";
+    rName.type = "text";
+    formWindow.appendChild(rNameLabel);
+    formWindow.appendChild(rName);
 
-// Adder functions
+    const rNationalityLabel = document.createElement("label");
+    rNationalityLabel.htmlFor = "restNat";
+    rNationalityLabel.style.marginLeft = 5+"px";
+    rNationalityLabel.textContent = "Nationality: ";
+    const rNation = document.createElement("input");
+    rNation.tagName = "restNat";
+    rNation.type = "text";
+    formWindow.appendChild(rNationalityLabel);
+    formWindow.appendChild(rNation);
 
-function addRequest(){
-    const form = document.createElement("div")
-    form.classList.add("form");
-    document.body.appendChild(form);
-    const formCont = document.createElement("form");
-    formCont.classList.add("formCont");
-
-    const nameField = document.createElement("input");
-    nameField.inputMode = "text";
-    nameField.id = "nameFieldID";
-    nameField.placeholder = "Restaurant Name";
-    formCont.appendChild(nameField);
-
-    const nationalityField = document.createElement("input");
-    nationalityField.inputMode = "text";
-    nationalityField.id = "natFieldID";
-    nationalityField.placeholder = "Nationality";
-    formCont.appendChild(nationalityField);
-
-    const priceField = document.createElement("input");
-    priceField.inputMode = "text";
-    priceField.id = "priceFieldID";
-    priceField.placeholder = "$ $$ $$$";
-    formCont.appendChild(priceField);
-
-    const fancynessField = document.createElement("input");
-    fancynessField.inputMode = "text";
-    fancynessField.id = "fancynessFieldID";
-    fancynessField.placeholder = "Casual, Mid, Fancy";
-    formCont.appendChild(fancynessField);
-
-    const veganField = document.createElement("input");
-    veganField.inputMode = "text";
-    veganField.id = "veganFieldID";
-    veganField.placeholder = "Has(n't) Vegan Options";
-    formCont.appendChild(veganField);
-
-    const speedField = document.createElement("input");
-    speedField.inputMode = "text";
-    speedField.id = "speedFieldID";
-    speedField.placeholder = "Slow, Fast";
-    formCont.appendChild(speedField);
-
-
-
-
-
- 
-
-    form.appendChild(formCont);
+    const rVisitedLabel = document.createElement("label");
+    rVisitedLabel.htmlFor = "restV";
+    rVisitedLabel.style.marginLeft = 5+"px";
+    rVisitedLabel.textContent = "Been there?: ";
+    const rVisited = document.createElement("input");
+    rVisited.tagName = "restV";
+    rVisited.type = "checkbox";
+    formWindow.appendChild(rVisitedLabel);
+    formWindow.appendChild(rVisited);
 }
-
-function inputFields(){
-    const formCont = document.createElement("form");
-    const nameField = document.createElement("input");
-    nameField.inputMode = "text";
-    nameField.id = "nameFieldID";
-    nameField.placeholder = "Restaurant Name";
-    formCont.appendChild(nameField);
-}
-
-function addToList(restaurant){
-    const place = document.createElement("div");
-    place.classList.add("restTile");
-    place.textContent = 
-    `${restaurant.name}
-    ${restaurant.nationality}
-    ${restaurant.price}
-    ${restaurant.fancyness}
-    ${restaurant.vegan}
-    ${restaurant.speed}`;
-    container.appendChild(place);
-}
-
