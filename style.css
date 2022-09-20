@@ -61,14 +61,80 @@ body {
 }
 
 .addWindow{
-    width: 50vw;
+    width: 50vh;
     height: 50vh;
     background-color: white;
     border-style: solid;
     border-radius: 25px;
     box-shadow: 10px 10px;
     position: fixed;
-    margin-left: 25vw;
-    margin-top: 20vh;
-   
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media (max-width: 400px){
+    .addWindow{
+        width: 370px;
+        height: 50vh;
+        background-color: white;
+        border-style: solid;
+        border-radius: 25px;
+        box-shadow: 10px 10px;
+        position: fixed;
+        margin-top: 0;
+        /*top: 0;
+        left: 0;*/
+    }
+}
+
+.formWindow{
+    padding-top: 5%;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 19% 19% 19% 19% 10%;
+    row-gap: 1%;
+}
+
+button:hover{
+    background-color: rgb(255, 255, 176);
+}
+#container{
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 5%;
+    row-gap: 10%;
+}
+.restaurantTile{
+    background-color:white;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.restaurantTile * { 
+    flex: 1;
+}
+
+@media (max-width: 400px){
+    #container{
+        padding: 5%;
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 10%;
+    }
 }
